@@ -1,7 +1,7 @@
 all: main
 
-main.o: main.c fat.c partition.c add.c put.c delete.c
-	gcc main.c fat.c partition.c add.c put.c delete.c -c 
+main: main.o fat.o partition.o add.o put.o delete.o
+	gcc main.o fat.o partition.o add.o put.o delete.o -o main
 
-clean: 
-     rm *.o
+clean:
+	rm *.o main 
